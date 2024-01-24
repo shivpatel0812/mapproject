@@ -1,14 +1,13 @@
 :root {
-  --color-brand--1: #ffb545;
-  --color-brand--2: #00c46a;
+  --color-brand--1: #69cfff; /* Light blue */
+  --color-brand--2: #57b2e6; /* Slightly darker light blue */
 
-  --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: rgb(214, 222, 224);
+  --color-dark--1: #37475a; /* Dark blue */
+  --color-dark--2: #4f617a; /* Slightly lighter dark blue */
+  --color-light--1: #d1e0e5; /* Very light blue, for text */
+  --color-light--2: #eef3f6; /* Lightest blue, for backgrounds */
+  --color-light--3: rgb(214, 222, 224); /* Adjust as needed */
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -67,7 +66,7 @@ a:visited {
   margin-bottom: 4rem;
 }
 
-.workouts {
+.mapsetup {
   list-style: none;
   height: 77vh;
   overflow-y: scroll;

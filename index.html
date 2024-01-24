@@ -34,7 +34,7 @@
     <div class="sidebar">
       <img src="logo.png" alt="Logo" class="logo" />
 
-      <ul class="workouts">
+      <ul class="mapset">
         <form class="form hidden">
           <div class="form__row">
             <label class="form__label">Type</label>
@@ -127,14 +127,7 @@
       </ul>
 
       <!-- <p class="copyright">
-        &copy; Copyright by
-        <a
-          class="twitter-link"
-          target="_blank"
-          href="https://twitter.com/jonasschmedtman"
-          >Jonas Schmedtmann</a
-        >. Use for learning or your portfolio. Don't use to teach. Don't claim
-        as your own.
+        
       </p> -->
     </div>
 
@@ -150,9 +143,9 @@
     <!-- Firebase CDN Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
-
-
+    
     <!-- Firebase Initialization -->
     <script>
       // import { initializeApp } from 'firebase/app';
@@ -168,6 +161,9 @@
         measurementId: 'G-K1DKKSKDH4',
       };
       firebase.initializeApp(firebaseConfig);
+
+
+      
       firebase.analytics();
     </script>
 
@@ -176,6 +172,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
 
     <!-- Your Script -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="main1.js"></script>
+
   </body>
 </html>
