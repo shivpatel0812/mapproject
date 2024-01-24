@@ -1,8 +1,8 @@
-app/
-firebasesetup/
-icon/
-logo/
-main/
-mapSetupClass
-script/
-utility/
+app.js
+firebasesetup.js
+icon.png
+logo.png
+main.js
+mapSetupClass.js
+script.js
+utility.js
