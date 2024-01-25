@@ -25,8 +25,8 @@ export class MapUIHandler {
         L.popup({
           maxWidth: 250,
           minWidth: 100,
-          autoClose: true, // This allows the popup to close if another popup is opened
-          closeOnClick: true, // This allows the popup to close if the map is clicked
+          autoClose: true, 
+          closeOnClick: true,
           className: `${mapset.type}-popup`,
         })
       )
@@ -34,10 +34,10 @@ export class MapUIHandler {
         this.getImageUploadFormHtml() + `${mapset.description}`
       )
       .on('popupopen', e => {
-        // Initialize the form and setup event listeners when the popup is opened
+       
       })
       .on('popupclose', e => {
-        // Cleanup if needed when the popup is closed
+    
       });
   }
 
@@ -50,16 +50,16 @@ export class MapUIHandler {
 
         if (file) {
           try {
-            // Upload the file using Firebase storage utility
+         
             const fileUrl = await firebaseStorageUtils.uploadFile(file);
 
-            // Display the image in the 'image-display-area' div
+  
             const imageDisplayArea = document.getElementById('image-display-area');
             const img = document.createElement('img');
             img.src = fileUrl;
             imageDisplayArea.appendChild(img);
 
-            // Clear the input after upload
+     
             fileInput.value = '';
 
             alert('Image uploaded successfully!');
