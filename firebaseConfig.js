@@ -1,26 +1,32 @@
-// Firebase configuration
-// Add your Firebase configuration details here
+
+
+// import { initialize } from './firebaseConfig.js';
+
 const firebaseConfig = {
-  // Your Firebase Config
+
 };
 
-export default firebaseConfig;
+// export default firebaseConfig;
 
 
-class firebaseUtils {
+class FirebaseUtils {
   #maparray = [];
 
   constructor() {
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
+   
 
     // Firestore database
     this.db = firebase.firestore();
+    
   }
 
   async setLocalStorage(maparray) {
     maparray.forEach(async (mapset) => {
-      const mapdata = mapset.toFirestore(); // Convert to plain object
+      const mapdata = mapset.toFirestore(); 
       try {
         const docRef = await this.db.collection('mapset').add(mapdata);
         console.log('Document written with ID: ', docRef.id);
@@ -34,7 +40,7 @@ class firebaseUtils {
     const db = firebase.firestore(); // Access Firestore
 
     this.#maparray.forEach((mapset) => {
-      const mapdata = mapset._toFirestore(); // Convert to plain object
+      const mapdata = mapset._toFirestore();
       db.collection('mapset')
         .add(mapdata)
         .then((docRef) => console.log('Document written with ID: ', docRef.id))
@@ -50,15 +56,15 @@ class firebaseUtils {
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         let mapset;
-        if (data.type === 'Running') {
-          mapset = new Running(
+        if (data.type === 'Vacation') {
+          mapset = new Vacation(
             data.coords,
             data.distance,
             data.duration,
             data.cadence
           );
-        } else if (data.type === 'Cycling') {
-          mapset = new Cycling(
+        } else if (data.type === 'Travel') {
+          mapset = new Travel(
             data.coords,
             data.distance,
             data.duration,
@@ -75,3 +81,7 @@ class firebaseUtils {
     }
   }
 }
+
+
+const firebaseUtilsInstance = new FirebaseUtils();
+export {  firebaseUtilsInstance as firebaseUtils };
